@@ -22,7 +22,7 @@ export const Container = () => {
   return (
     <div>
       <MenuSection foodLabels={foodLabels} />
-      <OrderSection />
+      <OrderSection foodLabels={foodLabels} />
     </div>
   );
 };

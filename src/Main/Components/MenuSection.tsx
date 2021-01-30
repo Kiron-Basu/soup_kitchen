@@ -13,25 +13,15 @@ export const MenuSection: React.FC<IMenuSection> = ({
 }): JSX.Element => {
   const dispatch = useDispatch();
 
-  const increaseOrder = (foodItem: FoodItem): void => {
-    dispatch(actionCreators.addItem(foodItem));
-  };
-
-  const decreaseOrder = (foodItem: FoodItem): void => {
-    dispatch(actionCreators.removeItem(foodItem));
+  const addToCart = (foodItem: FoodItem, quantity: number): void => {
+    dispatch(actionCreators.addToCart(foodItem, quantity));
   };
 
   return (
     <div>
       <p>Menu Section</p>
       {foodLabels.map((label) => {
-        return (
-          <MenuItem
-            label={label}
-            increaseOrder={increaseOrder}
-            decreaseOrder={decreaseOrder}
-          />
-        );
+        return <MenuItem label={label} handleAddToCart={addToCart} />;
       })}
     </div>
   );
