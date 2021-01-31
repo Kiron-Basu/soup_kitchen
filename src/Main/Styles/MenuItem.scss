@@ -1,0 +1,13 @@
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  //   grid-template-rows: repeat(5, 1fr);
+  //   grid-gap: 5px;
+  margin: 0 1vw 0 1vw;
+
+  //   &_quantityButtons {
+  //     justify-self: start;
+  //     align-self: end;
+  //     grid-row: 4 / 5;
+  //   }
+}
