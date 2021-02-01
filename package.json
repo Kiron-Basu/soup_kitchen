@@ -1,5 +1,8 @@
 {
   "name": "soup-kitchen",
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -49,9 +52,9 @@
     ]
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.8",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
-    "jest": "^26.6.3",
     "jest-enzyme": "^7.1.2",
     "redux-devtools-extension": "^2.13.8"
   }

@@ -11,10 +11,6 @@ import {
   CardContent,
   CardHeader,
 } from "@material-ui/core";
-import bread from "../Images/bread.jpg";
-import milk from "../Images/milk.jpg";
-import cheese from "../Images/cheese.jpg";
-import butter from "../Images/butter.jpg";
 import { capitalise } from "../Utilities/InvoiceUtilities";
 
 interface IMenuItem {

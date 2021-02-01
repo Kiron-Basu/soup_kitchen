@@ -126,13 +126,7 @@ export default function orderReducer(
   state: IOrderState = getInitialOrderState(),
   action: Actions
 ): IOrderState {
-  console.log("@@@ in reducer", action);
-
   switch (action.type) {
-    // case ActionTypes.ADD_ITEM:
-    //   return processAddItem(state, action);
-    // case ActionTypes.REMOVE_ITEM:
-    //   return processRemoveItem(state, action);
     case ActionTypes.ADD_TO_CART:
       return processAddToCart(state, action);
     case ActionTypes.CLEAR_ITEM:
