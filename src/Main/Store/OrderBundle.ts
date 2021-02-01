@@ -3,6 +3,7 @@ import { FoodItem } from "../Enums/FoodItems";
 // Action Types
 export enum ActionTypes {
   ADD_ITEM = "ORDER_ADD_ITEM",
+  CLEAR_ITEM = "ORDER_CLEAR_ITEM",
   REMOVE_ITEM = "ORDER_REMOVE_ITEM",
   ADD_TO_CART = "ADD_TO_CART",
 }
@@ -10,6 +11,11 @@ export enum ActionTypes {
 //Action Interfaces
 export interface IAddItemAction {
   type: ActionTypes.ADD_ITEM;
+  item: FoodItem;
+}
+
+export interface IClearItemAction {
+  type: ActionTypes.CLEAR_ITEM;
   item: FoodItem;
 }
 
@@ -25,13 +31,24 @@ export interface IAddToCartAction {
 }
 
 // Consolidate Action Interfaces
-type Actions = IAddItemAction | IRemoveItemAction | IAddToCartAction;
+type Actions =
+  | IAddItemAction
+  | IRemoveItemAction
+  | IAddToCartAction
+  | IClearItemAction;
 
 // Action Creators
 export const actionCreators = {
   addItem(item: FoodItem): IAddItemAction {
     return {
       type: ActionTypes.ADD_ITEM,
+      item: item,
+    };
+  },
+
+  clearItem(item: FoodItem): IClearItemAction {
+    return {
+      type: ActionTypes.CLEAR_ITEM,
       item: item,
     };
   },
@@ -76,28 +93,6 @@ export function getInitialOrderState(): Readonly<IOrderState> {
   };
 }
 
-// Subreducers
-
-// function processAddItem(
-//   state: IOrderState,
-//   action: IAddItemAction
-// ): IOrderState {
-//   return {
-//     ...state,
-//     [action.item]: state[action.item] + 1, //check if there's a better way to do
-//   };
-// }
-
-// function processRemoveItem(
-//   state: IOrderState,
-//   action: IRemoveItemAction
-// ): IOrderState {
-//   return {
-//     ...state,
-//     [action.item]: state[action.item] - 1, //check if there's a better way to do
-//   };
-// }
-
 function processAddToCart(
   state: IOrderState,
   action: IAddToCartAction
@@ -108,6 +103,20 @@ function processAddToCart(
       ...state[action.item],
       quantity: action.quantity,
       subtotal: action.quantity * state[action.item].price,
+    },
+  };
+}
+
+function processClearItem(
+  state: IOrderState,
+  action: IClearItemAction
+): IOrderState {
+  return {
+    ...state,
+    [action.item]: {
+      ...state[action.item],
+      quantity: 0,
+      subtotal: 0,
     },
   };
 }
@@ -126,6 +135,8 @@ export default function orderReducer(
     //   return processRemoveItem(state, action);
     case ActionTypes.ADD_TO_CART:
       return processAddToCart(state, action);
+    case ActionTypes.CLEAR_ITEM:
+      return processClearItem(state, action);
     default:
       return state;
   }

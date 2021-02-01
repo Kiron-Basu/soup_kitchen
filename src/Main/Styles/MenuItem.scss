@@ -1,9 +1,33 @@
 .menuItem {
   display: flex;
   flex-direction: column;
+  align-items: center;
   //   grid-template-rows: repeat(5, 1fr);
   //   grid-gap: 5px;
   margin: 0 1vw 0 1vw;
+
+  &__image {
+    width: 184px;
+    height: 125px;
+    background-size: cover;
+    border: 1px solid rgb(0, 0, 0);
+
+    &--bread {
+      background-image: url("../Images/bread.jpg");
+    }
+    &--milk {
+      background-image: url("../Images/milk.jpg");
+    }
+    &--soup {
+      background-image: url("../Images/soup.jpg");
+    }
+    &--butter {
+      background-image: url("../Images/butter.jpg");
+    }
+    &--cheese {
+      background-image: url("../Images/cheese.jpg");
+    }
+  }
 
   //   &_quantityButtons {
   //     justify-self: start;

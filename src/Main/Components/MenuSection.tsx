@@ -20,10 +20,9 @@ export const MenuSection: React.FC<IMenuSection> = ({
 
   return (
     <>
-      <p>Menu Section</p>
       <div className="menuSection">
         {foodLabels.map((label) => {
-          return <MenuItem label={label} handleAddToCart={addToCart} />;
+          return <MenuItem label={label} addToCart={addToCart} />;
         })}
       </div>
     </>

@@ -4,7 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import KitchenIcon from "@material-ui/icons/Kitchen";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
@@ -38,19 +38,6 @@ function getModalStyle() {
   };
 }
 
-//   const useStyles = makeStyles((theme: Theme) =>
-//     createStyles({
-//       paper: {
-//         position: 'absolute',
-//         width: 400,
-//         backgroundColor: theme.palette.background.paper,
-//         border: '2px solid #000',
-//         boxShadow: theme.shadows[5],
-//         padding: theme.spacing(2, 4, 3),
-//       },
-//     }),
-//   );
-
 export default function ButtonAppBar() {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
@@ -71,7 +58,7 @@ export default function ButtonAppBar() {
   const body = <OrderSection foodLabels={foodLabels} className="modalBody" />;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             edge="start"
@@ -84,9 +71,9 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             Soup Kitchen
           </Typography>
-          <ShoppingBasketIcon />
+          <ShoppingCartIcon />
           <Button color="inherit" onClick={handleOpen}>
-            Basket
+            Cart
           </Button>
           <Modal
             open={open}

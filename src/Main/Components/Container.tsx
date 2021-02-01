@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import { getInitialOrderState, IOrderState } from "../Store/OrderBundle"; //reinstate interface from interface folder?
 import AppBar from "./AppBar";
 import { MenuSection } from "./MenuSection";
-import OrderSection from "./OrderSection";
+import "../Styles/MenuSection.scss";
 
 export const Container = () => {
   const defaultState: IOrderState = getInitialOrderState();
@@ -12,8 +11,8 @@ export const Container = () => {
   return (
     <div>
       <AppBar />
+      <span className="menuSection menuSection__image menuSection__image--title"></span>
       <MenuSection foodLabels={foodLabels} />
-      <OrderSection foodLabels={foodLabels} />
     </div>
   );
 };

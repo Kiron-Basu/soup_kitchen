@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { IState } from "../Store/IState";
-import { IOrderState } from "../Store/OrderBundle";
+import { actionCreators, IOrderState } from "../Store/OrderBundle";
 import { OrderItem } from "../Components/OrderItem";
 import { FoodItem } from "../Enums/FoodItems";
 import {
@@ -9,6 +9,7 @@ import {
 } from "../Utilities/InvoiceUtilities";
 import { IDiscount } from "../Interfaces/IDiscount";
 import { OrderSummary } from "./OrderSummary";
+import { useDispatch } from "react-redux";
 
 interface IStoreProps {
   order: IOrderState;
@@ -26,9 +27,14 @@ export const OrderSection: React.FC<IOrderSectionProps> = (
   const { order, foodLabels } = props;
   const preDiscountTotal: number = totalBeforeDiscounts(order);
   const discounts: ReadonlyArray<IDiscount> = getDiscounts(order);
+  const dispatch = useDispatch();
+  const handleClearItem = (item: FoodItem) => {
+    dispatch(actionCreators.clearItem(item));
+  };
+
   return (
     <div className={props.className}>
-      <p>Order Section</p>
+      <h2 className={`${props.className}__title`}>Order Summary</h2>
       {foodLabels.map((label) => {
         const quantity: number = order[label as keyof typeof FoodItem].quantity;
         const subtotal: number = order[label as keyof typeof FoodItem].subtotal;
@@ -38,6 +44,7 @@ export const OrderSection: React.FC<IOrderSectionProps> = (
               foodItem={label}
               quantity={quantity}
               subtotal={subtotal}
+              handleClearItem={handleClearItem}
             />
           );
         }

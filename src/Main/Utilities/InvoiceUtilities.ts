@@ -17,10 +17,15 @@ export function getDiscounts(order: IOrderState): ReadonlyArray<IDiscount> {
       : (order.bread.price / 2) * order.soup.quantity;
 
   return [
-    { type: "1/3 off butter discount", discount: butterDiscount },
-    { type: "Second cheese free discount", discount: cheeseDiscount },
-    { type: "Half price bread discount", discount: soupDiscount },
+    { type: "butter discount", discount: butterDiscount },
+    { type: "cheese discount", discount: cheeseDiscount },
+    { type: "bread discount", discount: soupDiscount },
   ];
 }
 
 export const poundify = (num: number) => `£${(num / 100).toFixed(2)}`;
+
+export const capitalise = (str: string) => {
+  if (typeof str !== "string") return "";
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};

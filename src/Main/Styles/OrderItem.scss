@@ -1,0 +1,12 @@
+.orderItem {
+  display: flex;
+  align-items: center;
+
+  &__deleteIcon {
+    margin-left: 5px;
+  }
+
+  &__description {
+    text-align: start;
+  }
+}
