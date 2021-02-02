@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { dispatch } from "../../Store";
 import { FoodItem } from "../Enums/FoodItems";
 import { actionCreators } from "../Store/OrderBundle";
 import "../Styles/MenuSection.scss";
@@ -12,8 +12,6 @@ interface IMenuSection {
 export const MenuSection: React.FC<IMenuSection> = ({
   foodLabels,
 }): JSX.Element => {
-  const dispatch = useDispatch();
-
   const addToCart = (foodItem: FoodItem, quantity: number): void => {
     dispatch(actionCreators.addToCart(foodItem, quantity));
   };
@@ -22,7 +20,7 @@ export const MenuSection: React.FC<IMenuSection> = ({
     <>
       <div className="menuSection">
         {foodLabels.map((label) => {
-          return <MenuItem label={label} addToCart={addToCart} />;
+          return <MenuItem label={label} key={label} addToCart={addToCart} />;
         })}
       </div>
     </>

@@ -1,7 +1,9 @@
 {
   "name": "soup-kitchen",
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "version": "0.1.0",
   "private": true,

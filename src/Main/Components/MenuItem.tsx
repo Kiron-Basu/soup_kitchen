@@ -7,7 +7,6 @@ import {
   Button,
   Typography,
   Card,
-  CardMedia,
   CardContent,
   CardHeader,
 } from "@material-ui/core";
@@ -41,21 +40,17 @@ export const MenuItem: React.FC<IMenuItem> = ({ addToCart, label }) => {
   return (
     <Card className="menuItem">
       <CardHeader title={capitalise(label)}></CardHeader>
-      {/* <CardMedia component="img" image={label} title={label} /> */}
-      {/* <img src={fp} alt="product" /> */}
       <div className={`menuItem__image menuItem__image--${label}`} />
       <div>
         <AddBoxIcon
           fontSize="large"
           color="action"
           onClick={handleIncrease}
-          className="menuItem_quantityButtons"
         ></AddBoxIcon>
         <IndeterminateCheckBoxBoxIcon
           fontSize="large"
           color="action"
           onClick={handleDecrease}
-          className="menuItem_quantityButtons"
         ></IndeterminateCheckBoxBoxIcon>
       </div>
       <CardContent>

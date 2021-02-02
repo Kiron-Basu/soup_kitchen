@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderSummary tests Renders OrderSummary correctly 1`] = `
+<WithStyles(ForwardRef(List))
+  className="orderSummary"
+>
+  <WithStyles(ForwardRef(ListItem))
+    key="0discount"
+  >
+    <Memo(ForwardRef(MoneyOffIcon))
+      fontSize="small"
+    />
+    Bread discount
+     : 
+    £1.00
+  </WithStyles(ForwardRef(ListItem))>
+  <WithStyles(ForwardRef(Typography))
+    variant="h6"
+  >
+    <WithStyles(ForwardRef(Divider)) />
+    <div
+      className="orderSummary__subtotal"
+    >
+      Subtotal: 
+      £2.00
+    </div>
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Typography))
+    gutterBottom={true}
+    variant="h5"
+  >
+    <WithStyles(ForwardRef(Divider)) />
+    <div
+      className="orderSummary__total"
+    >
+      Total: 
+      £1.00
+    </div>
+    <WithStyles(ForwardRef(Divider)) />
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Button))
+    color="secondary"
+    disabled={false}
+    size="large"
+    variant="contained"
+  >
+    Order
+  </WithStyles(ForwardRef(Button))>
+</WithStyles(ForwardRef(List))>
+`;

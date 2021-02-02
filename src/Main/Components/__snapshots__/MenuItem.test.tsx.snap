@@ -1,3 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MenuItem tests Renders MenuItem correctly 1`] = `ShallowWrapper {}`;
+exports[`MenuItem tests Renders MenuItem correctly 1`] = `
+<WithStyles(ForwardRef(Card))
+  className="menuItem"
+>
+  <WithStyles(ForwardRef(CardHeader))
+    title="Test"
+  />
+  <div
+    className="menuItem__image menuItem__image--test"
+  />
+  <div>
+    <Memo(ForwardRef(AddBoxIcon))
+      className="menuItem_quantityButtons"
+      color="action"
+      fontSize="large"
+      onClick={[Function]}
+    />
+    <Memo(ForwardRef(IndeterminateCheckBoxIcon))
+      className="menuItem_quantityButtons"
+      color="action"
+      fontSize="large"
+      onClick={[Function]}
+    />
+  </div>
+  <WithStyles(ForwardRef(CardContent))>
+    <WithStyles(ForwardRef(Typography))
+      color="textSecondary"
+      component="p"
+      variant="body2"
+    />
+    <WithStyles(ForwardRef(Button))
+      color="primary"
+      onClick={[Function]}
+      size="small"
+      variant="contained"
+    >
+      Update cart
+    </WithStyles(ForwardRef(Button))>
+  </WithStyles(ForwardRef(CardContent))>
+  <p>
+    Quantity: 
+    0
+  </p>
+</WithStyles(ForwardRef(Card))>
+`;

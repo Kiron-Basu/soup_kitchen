@@ -5,12 +5,6 @@
   @media (max-width: 800px) {
     flex-direction: column;
   }
-  &__title {
-    //used?
-    text-align: center;
-    position: relative;
-    margin-top: 80px;
-  }
 
   &__image {
     display: flex;
@@ -18,11 +12,5 @@
     width: 350px;
     height: 150px;
     background-size: cover;
-
-    &--title {
-      margin: 80px auto 30px auto;
-      align-items: center;
-      background-image: url("../Images/logo.png");
-    }
   }
 }

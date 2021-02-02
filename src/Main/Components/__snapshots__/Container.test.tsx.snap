@@ -1,3 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App container tests Renders container correctly 1`] = `ShallowWrapper {}`;
+exports[`App container tests Renders container correctly 1`] = `
+<div>
+  <ButtonAppBar />
+  <span
+    className="menuSection menuSection__image menuSection__image--title"
+  />
+  <MenuSection
+    foodLabels={
+      Array [
+        "bread",
+        "cheese",
+        "milk",
+        "butter",
+        "soup",
+      ]
+    }
+  />
+</div>
+`;

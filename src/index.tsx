@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Store, { Provider } from "react-redux";
+import { Provider } from "react-redux";
+import { Store } from "redux";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import configureStore from "./Store";
+import configureStore, { setStore } from "./Store";
+import { IState } from "./Main/Store/IState";
 
-const store = configureStore();
+const store = configureStore() as Store<IState>;
+console.log("setting store,", store);
+
+setStore(store);
 
 ReactDOM.render(
   <React.StrictMode>

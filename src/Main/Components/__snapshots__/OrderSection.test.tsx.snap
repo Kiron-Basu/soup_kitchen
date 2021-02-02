@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderSection tests Renders OrderSection correctly 1`] = `
+<div>
+  <h2
+    className="undefined__title"
+  >
+    Order Summary
+  </h2>
+  <OrderSummary
+    discounts={
+      Array [
+        Object {
+          "discount": 0,
+          "type": "butter discount",
+        },
+        Object {
+          "discount": 0,
+          "type": "cheese discount",
+        },
+        Object {
+          "discount": 0,
+          "type": "bread discount",
+        },
+      ]
+    }
+    preDiscountTotal={0}
+  />
+</div>
+`;

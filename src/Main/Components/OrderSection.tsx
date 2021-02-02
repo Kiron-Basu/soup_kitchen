@@ -9,7 +9,7 @@ import {
 } from "../Utilities/InvoiceUtilities";
 import { IDiscount } from "../Interfaces/IDiscount";
 import { OrderSummary } from "./OrderSummary";
-import { useDispatch } from "react-redux";
+import { dispatch } from "../../Store";
 
 interface IStoreProps {
   order: IOrderState;
@@ -27,7 +27,7 @@ export const OrderSection: React.FC<IOrderSectionProps> = (
   const { order, foodLabels } = props;
   const preDiscountTotal: number = totalBeforeDiscounts(order);
   const discounts: ReadonlyArray<IDiscount> = getDiscounts(order);
-  const dispatch = useDispatch();
+
   const handleClearItem = (item: FoodItem) => {
     dispatch(actionCreators.clearItem(item));
   };
@@ -41,6 +41,7 @@ export const OrderSection: React.FC<IOrderSectionProps> = (
         if (quantity > 0) {
           return (
             <OrderItem
+              key={label}
               foodItem={label}
               quantity={quantity}
               subtotal={subtotal}
@@ -48,6 +49,7 @@ export const OrderSection: React.FC<IOrderSectionProps> = (
             />
           );
         }
+        return null;
       })}
       <OrderSummary preDiscountTotal={preDiscountTotal} discounts={discounts} />
     </div>

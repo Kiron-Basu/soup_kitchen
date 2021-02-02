@@ -66,9 +66,9 @@ export const OrderSummary: React.FC<IOrderSummary> = ({
     }
 
     return discounts.some((discount) => discount.discount > 0) ? (
-      discounts.map((discount) =>
+      discounts.map((discount, i) =>
         discount.discount > 0 ? (
-          <ListItem>
+          <ListItem key={i + "discount"}>
             <MoneyOffIcon fontSize="small" />
             {`${discount.type}`} : {poundify(discount.discount)}
           </ListItem>

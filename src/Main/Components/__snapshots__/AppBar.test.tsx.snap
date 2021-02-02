@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App AppBar tests Renders AppBar correctly 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(AppBar))
+    position="fixed"
+  >
+    <WithStyles(ForwardRef(Toolbar))>
+      <WithStyles(ForwardRef(IconButton))
+        aria-label="menu"
+        className="makeStyles-menuButton-2"
+        color="inherit"
+        edge="start"
+      >
+        <Memo(ForwardRef(KitchenIcon)) />
+      </WithStyles(ForwardRef(IconButton))>
+      <WithStyles(ForwardRef(Typography))
+        className="makeStyles-title-3"
+        variant="h6"
+      >
+        Soup Kitchen
+      </WithStyles(ForwardRef(Typography))>
+      <Memo(ForwardRef(ShoppingCartIcon)) />
+      <WithStyles(ForwardRef(Button))
+        color="inherit"
+        onClick={[Function]}
+      >
+        Cart
+      </WithStyles(ForwardRef(Button))>
+      <ForwardRef(Modal)
+        aria-describedby="simple-modal-description"
+        aria-labelledby="simple-modal-title"
+        className="modal"
+        onClose={[Function]}
+        open={false}
+      >
+        <Connect(OrderSection)
+          className="modalBody"
+          foodLabels={
+            Array [
+              "bread",
+              "cheese",
+              "milk",
+              "butter",
+              "soup",
+            ]
+          }
+        />
+      </ForwardRef(Modal)>
+    </WithStyles(ForwardRef(Toolbar))>
+  </WithStyles(ForwardRef(AppBar))>
+</div>
+`;

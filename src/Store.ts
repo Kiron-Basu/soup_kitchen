@@ -1,19 +1,8 @@
-import {
-  createStore,
-  applyMiddleware,
-  Reducer,
-  combineReducers,
-  Store,
-  compose,
-} from "redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
-import orderReducer, {
-  getInitialOrderState,
-  IOrderState,
-} from "./Main/Store/OrderBundle";
+import { createStore, Reducer, combineReducers, Store } from "redux";
+import orderReducer, { getInitialOrderState } from "./Main/Store/OrderBundle";
+import { IState } from "./Main/Store/IState";
 
-export let store: Readonly<Store<IOrderState>>;
+export let store: Readonly<Store<IState>>;
 
 export function dispatch(action: { type: string }): void {
   if (store !== undefined) {
@@ -29,9 +18,9 @@ function getReducers(): {} {
 
 export default function configureStore(initialState = getInitialOrderState) {
   const reducer: Reducer<{}> = combineReducers(getReducers());
-  return createStore(
-    reducer,
-    initialState(),
-    composeWithDevTools(applyMiddleware(thunk))
-  );
+  return createStore(reducer, initialState()) as Store<IState>;
+}
+
+export function setStore(setAsStore: Readonly<Store<IState>>): void {
+  store = setAsStore;
 }

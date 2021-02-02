@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuSection tests Renders MenuSection correctly 1`] = `
+<Fragment>
+  <div
+    className="menuSection"
+  >
+    <MenuItem
+      addToCart={[Function]}
+      key="test"
+      label="test"
+    />
+  </div>
+</Fragment>
+`;

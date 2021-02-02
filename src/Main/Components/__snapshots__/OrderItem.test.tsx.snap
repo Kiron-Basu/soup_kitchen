@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderItem tests Renders OrderItem correctly 1`] = `
+<div
+  className="orderItem"
+>
+  <p
+    className="orderItem__description"
+  >
+    bread
+     x 
+    0
+         |    
+     
+    £0.00
+  </p>
+  <Memo(ForwardRef(DeleteIcon))
+    className="orderItem__deleteIcon"
+    color="secondary"
+    onClick={[Function]}
+  />
+  <WithStyles(ForwardRef(Divider))
+    variant="fullWidth"
+  />
+</div>
+`;
