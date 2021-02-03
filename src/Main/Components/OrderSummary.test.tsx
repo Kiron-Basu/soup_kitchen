@@ -1,7 +1,9 @@
 import React from "react";
-import { ShallowWrapper, shallow } from "enzyme";
+import { 
+  ShallowWrapper,
+  shallow 
+} from "enzyme";
 
-import * as Store from "../../Store";
 import { OrderSummary } from "./OrderSummary";
 import { defaultDiscount } from "../Interfaces/__mocks__/defaultDiscount";
 

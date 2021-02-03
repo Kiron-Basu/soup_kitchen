@@ -1,5 +1,8 @@
 import React from "react";
-import { ShallowWrapper, shallow } from "enzyme";
+import { 
+  ShallowWrapper,
+  shallow 
+} from "enzyme";
 
 import { MenuItem } from "./MenuItem";
 

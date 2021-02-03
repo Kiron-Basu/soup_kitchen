@@ -1,7 +1,8 @@
+$modalHeight: 70%;
+$titlePadding: 10px;
+
 .modal {
-  //   background-color: aqua;
-  transition: 0.35s ease-in-out; //not working??
-  height: 70%;
+  height: $modalHeight;
 }
 
 .modalBody {
@@ -16,7 +17,7 @@
   overflow-x: hidden;
 
   &__title {
-    padding: 10px;
+    padding: $titlePadding;
     border: 1px solid black;
   }
 }

@@ -1,12 +1,16 @@
 import React from "react";
+import { 
+  Button,
+  Divider,
+  List,
+  ListItem,
+  Typography 
+} from "@material-ui/core";
+import MoneyOffIcon from "@material-ui/icons/MoneyOff";
+
 import { IDiscount } from "../Interfaces/IDiscount";
 import { poundify } from "../Utilities/InvoiceUtilities";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import { Typography } from "@material-ui/core";
 import "../Styles/OrderSummary.scss";
-import { Button, Divider } from "@material-ui/core"; // import all like this
-import MoneyOffIcon from "@material-ui/icons/MoneyOff";
 
 interface IOrderSummary {
   preDiscountTotal: number;

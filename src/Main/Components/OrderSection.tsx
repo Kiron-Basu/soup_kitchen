@@ -1,6 +1,11 @@
+import React, { RefObject } from "react";
 import { connect } from "react-redux";
+
 import { IState } from "../Store/IState";
-import { actionCreators, IOrderState } from "../Store/OrderBundle";
+import { 
+  actionCreators,
+  IOrderState 
+} from "../Store/OrderBundle";
 import { OrderItem } from "../Components/OrderItem";
 import { FoodItem } from "../Enums/FoodItems";
 import {
@@ -31,7 +36,8 @@ export const OrderSection: React.FC<IOrderSectionProps> = (
   const handleClearItem = (item: FoodItem) => {
     dispatch(actionCreators.clearItem(item));
   };
-
+  const ref: RefObject<SVGSVGElement> = React.createRef();
+  
   return (
     <div className={props.className}>
       <h2 className={`${props.className}__title`}>Order Summary</h2>
@@ -41,6 +47,7 @@ export const OrderSection: React.FC<IOrderSectionProps> = (
         if (quantity > 0) {
           return (
             <OrderItem
+              ref={ref}
               key={label}
               foodItem={label}
               quantity={quantity}
@@ -60,6 +67,9 @@ function mapStateToProps(state: Readonly<IState>): IStoreProps {
   return { order: state.orderState };
 }
 
-export default connect<IStoreProps, {}, {}, IState>(mapStateToProps)(
-  OrderSection
-);
+export default connect<IStoreProps, {}, {}, IState>(
+  mapStateToProps,
+  null,
+  null,
+  { forwardRef: true }
+)(OrderSection);

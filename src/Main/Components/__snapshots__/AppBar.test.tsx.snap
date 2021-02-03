@@ -35,19 +35,22 @@ exports[`App AppBar tests Renders AppBar correctly 1`] = `
         className="modal"
         onClose={[Function]}
         open={false}
+        tabIndex={-1}
       >
-        <Connect(OrderSection)
-          className="modalBody"
-          foodLabels={
-            Array [
-              "bread",
-              "cheese",
-              "milk",
-              "butter",
-              "soup",
-            ]
-          }
-        />
+        <WithStyles(ForwardRef(DialogContent))>
+          <Connect(OrderSection)
+            className="modalBody"
+            foodLabels={
+              Array [
+                "bread",
+                "cheese",
+                "milk",
+                "butter",
+                "soup",
+              ]
+            }
+          />
+        </WithStyles(ForwardRef(DialogContent))>
       </ForwardRef(Modal)>
     </WithStyles(ForwardRef(Toolbar))>
   </WithStyles(ForwardRef(AppBar))>

@@ -1,3 +1,6 @@
+$imageWidth: 184px;
+$imageHeight: 125px;
+
 .menuItem {
   display: flex;
   flex-direction: column;
@@ -5,8 +8,8 @@
   margin: 0 1vw 0 1vw;
 
   &__image {
-    width: 184px;
-    height: 125px;
+    width: $imageWidth;
+    height: $imageHeight;
     background-size: cover;
     border: 1px solid rgb(0, 0, 0);
 

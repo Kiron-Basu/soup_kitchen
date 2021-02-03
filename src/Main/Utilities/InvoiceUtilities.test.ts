@@ -2,7 +2,10 @@ import { FoodItem } from "../Enums/FoodItems";
 import { IDiscount } from "../Interfaces/IDiscount";
 import { defaultState } from "../Interfaces/__mocks__/defaultState";
 import { IOrderState } from "../Store/OrderBundle";
-import { getDiscounts, totalBeforeDiscounts } from "./InvoiceUtilities";
+import { 
+  getDiscounts,
+  totalBeforeDiscounts 
+} from "./InvoiceUtilities";
 
 interface testQuantities {
   bread: number;

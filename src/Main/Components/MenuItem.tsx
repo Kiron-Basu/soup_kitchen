@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { FoodItem } from "../Enums/FoodItems";
-import "../Styles/MenuItem.scss";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import IndeterminateCheckBoxBoxIcon from "@material-ui/icons/IndeterminateCheckBox";
 import {
@@ -10,6 +8,9 @@ import {
   CardContent,
   CardHeader,
 } from "@material-ui/core";
+
+import { FoodItem } from "../Enums/FoodItems";
+import "../Styles/MenuItem.scss";
 import { capitalise } from "../Utilities/InvoiceUtilities";
 
 interface IMenuItem {

@@ -1,7 +1,10 @@
 import React from "react";
-import { ShallowWrapper, shallow } from "enzyme";
+import { 
+  ShallowWrapper, 
+  shallow 
+} from "enzyme";
 
-import ButtonAppBar from "./AppBar";
+import { ButtonAppBar } from "./AppBar";
 
 describe("App AppBar tests", () => {
   test("Renders AppBar correctly", () => {

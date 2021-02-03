@@ -1,9 +1,9 @@
 import React from "react";
+
 import { dispatch } from "../../Store";
 import { FoodItem } from "../Enums/FoodItems";
 import { actionCreators } from "../Store/OrderBundle";
 import "../Styles/MenuSection.scss";
-
 import { MenuItem } from "./MenuItem";
 
 interface IMenuSection {
@@ -12,9 +12,10 @@ interface IMenuSection {
 export const MenuSection: React.FC<IMenuSection> = ({
   foodLabels,
 }): JSX.Element => {
-  const addToCart = (foodItem: FoodItem, quantity: number): void => {
-    dispatch(actionCreators.addToCart(foodItem, quantity));
-  };
+  const addToCart = 
+    (foodItem: FoodItem, quantity: number): void => {
+      dispatch(actionCreators.addToCart(foodItem, quantity));
+    };
 
   return (
     <>

@@ -1,16 +1,25 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  makeStyles,
+  Modal,
+  DialogContent
+} from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import KitchenIcon from "@material-ui/icons/Kitchen";
-import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
+
+
 import OrderSection from "./OrderSection";
-import { getInitialOrderState, IOrderState } from "../Store/OrderBundle";
+import { 
+  getInitialOrderState, 
+  IOrderState 
+} from "../Store/OrderBundle";
 import "../Styles/Modal.scss";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -23,9 +32,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export const ButtonAppBar = React.forwardRef((props, ref) => {
   const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -37,7 +45,7 @@ export default function ButtonAppBar() {
   };
 
   const defaultState: IOrderState = getInitialOrderState();
-  const foodLabels: ReadonlyArray<string> = Object.keys(defaultState); //get from store?
+  const foodLabels: ReadonlyArray<string> = Object.keys(defaultState);
 
   const body = <OrderSection foodLabels={foodLabels} className="modalBody" />;
   return (
@@ -60,16 +68,17 @@ export default function ButtonAppBar() {
             Cart
           </Button>
           <Modal
+            tabIndex={-1}
             open={open}
             onClose={handleClose}
             className="modal"
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
           >
-            {body}
+            <DialogContent>{body}</DialogContent>
           </Modal>
         </Toolbar>
       </AppBar>
     </div>
   );
-}
+});
