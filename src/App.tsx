@@ -10,5 +10,5 @@ function App() {
     </div>
   );
 }
-// check root strcuture and if there is a layout on ICCS sim
+
 export default App;
